@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Copyright (c) 2021-2024 tteck
+# Author: tteck (tteckster)
+# License: MIT
+# https://github.com/tteck/Proxmox/raw/main/LICENSE
+
+source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+color
+verb_ip6
+catch_errors
+setting_up_container
+network_check
+update_os
+
+msg_info "Installing Dependencies"
+$STD apt-get install -y curl
+$STD apt-get install -y git
+$STD apt-get install -y patch
+$STD apt-get install -y apt-transport-https
+$STD apt-get install -y ca-certificate
+$STD apt-get install -y gnupg
+$STD apt-get install -y net-tools
+$STD apt-get install -y tzdata
+$STD apt-get install -y ucspi-tcp
+$STD apt-get install -y zip
+$STD apt-get install -y unzip
+$STD apt-get install -y python3
+$STD apt-get install -y lsb-release
+$STD apt-get install -y docker-ce
+$STD apt-get install -y docker-ce-cli
+$STD apt-get install -y containerd.io
+$STD apt-get install -y docker-buildx-plugin
+$STD apt-get install -y docker-compose-plugin
+$STD apt-get install -y sudo
+$STD apt-get install -y mc
+msg_ok "Installed Dependencies"
+
+msg_info "Installing LabCA"
+curl -sSL https://raw.githubusercontent.com/hakwerk/labca/master/install | bash
+msg_info "Installed LabCA"
+
+motd_ssh
+customize
+
+msg_info "Cleaning up"
+$STD apt-get -y autoremove
+$STD apt-get -y autoclean
+msg_ok "Cleaned"
