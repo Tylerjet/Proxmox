@@ -19,7 +19,7 @@ EOF
 header_info
 echo -e "Loading..."
 APP="LabCA"
-var_disk="2"
+var_disk="6"
 var_cpu="4"
 var_ram="5120"
 var_os="debian"
