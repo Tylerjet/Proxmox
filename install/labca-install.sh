@@ -18,7 +18,6 @@ $STD apt-get install -y curl
 $STD apt-get install -y git
 $STD apt-get install -y patch
 $STD apt-get install -y apt-transport-https
-$STD apt-get install -y ca-certificate
 $STD apt-get install -y gnupg
 $STD apt-get install -y net-tools
 $STD apt-get install -y tzdata
@@ -37,7 +36,7 @@ $STD apt-get install -y mc
 msg_ok "Installed Dependencies"
 
 msg_info "Installing LabCA"
-curl -sSL https://raw.githubusercontent.com/hakwerk/labca/master/install | bash
+curl -sSL https://raw.githubusercontent.com/hakwerk/labca/master/install | bash -s -- --name $(hostname -f)
 msg_info "Installed LabCA"
 
 motd_ssh
