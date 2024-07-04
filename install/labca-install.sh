@@ -26,11 +26,6 @@ $STD apt-get install -y zip
 $STD apt-get install -y unzip
 $STD apt-get install -y python3
 $STD apt-get install -y lsb-release
-$STD apt-get install -y docker-ce
-$STD apt-get install -y docker-ce-cli
-$STD apt-get install -y containerd.io
-$STD apt-get install -y docker-buildx-plugin
-$STD apt-get install -y docker-compose-plugin
 $STD apt-get install -y sudo
 $STD apt-get install -y mc
 msg_ok "Installed Dependencies"
