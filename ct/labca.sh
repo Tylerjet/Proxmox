@@ -72,5 +72,3 @@ pct set $CTID -memory 1024
 pct set $CTID -cores 2
 msg_ok "Set Container to Normal Resources"
 msg_ok "Completed Successfully!\n"
-echo -e "${APP}${CL} should be reachable by going to the following URL.
-         ${BL}https://${IP}/admin${CL} \n"
