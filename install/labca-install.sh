@@ -30,7 +30,7 @@ $STD apt-get install -y sudo
 $STD apt-get install -y mc
 msg_ok "Installed Dependencies"
 
-msg_info "Installing LabCA"
+msg_info "Installing LabCA *This may take a while"
 curl -sSL https://raw.githubusercontent.com/hakwerk/labca/master/install | bash -s -- --name $(hostname -f)
 msg_info "Installed LabCA"
 
